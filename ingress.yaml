@@ -4,6 +4,11 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
+  tls:
+    - hosts:
+      - www.example.com
+      - api.example.com
+      secretName: example-tls-secret
   ingressClassName: nginx 
   rules:
   - host: www.example.com
